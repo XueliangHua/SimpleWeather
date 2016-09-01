@@ -51,7 +51,7 @@ public class SimpleWeatherDB {
     }
 
     //从数据库读取全国所有的省份信息
-    public List<Province> loadProvince() {
+    public List<Province> loadProvinces() {
         List<Province> list = new ArrayList<Province>();
         Cursor cursor = db.query("Province", null, null, null, null, null, null);
         if (cursor.moveToFirst()) {
@@ -63,6 +63,7 @@ public class SimpleWeatherDB {
                 list.add(province);
             } while (cursor.moveToNext());
         }
+        cursor.close();
         return list;
     }
 
@@ -78,7 +79,7 @@ public class SimpleWeatherDB {
     }
 
     //从数据库读取某省下所有的城市信息
-    public List<City> loadCity(int province_id) {
+    public List<City> loadCities(int province_id) {
         List<City> list = new ArrayList<>();
         Cursor cursor = db.query("City", null, "province_id = ?", new String[]{String.valueOf(province_id)}, null, null, null);
         if (cursor.moveToFirst()) {
@@ -91,6 +92,7 @@ public class SimpleWeatherDB {
                 list.add(city);
             } while (cursor.moveToNext());
         }
+        cursor.close();
         return list;
     }
 
@@ -119,6 +121,7 @@ public class SimpleWeatherDB {
                 list.add(county);
             } while (cursor.moveToNext());
         }
+        cursor.close();
         return list;
     }
 }
