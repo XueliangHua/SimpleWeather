@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Dennis on 2016/8/31.
+ * Created by Xueliang Hua on 2016/8/31.
  */
 public class SimpleWeatherDB {
     //数据库名

@@ -1,7 +1,7 @@
 package com.simpleweather.app.simpleweather.model;
 
 /**
- * Created by Dennis on 2016/8/31.
+ * Created by Xueliang Hua on 2016/8/31.
  */
 public class County {
     private int id;
